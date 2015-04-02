@@ -134,6 +134,24 @@ namespace FiverxLinkSecurityLib.Kommunikation.V0200
       return anfrage;
     }
 
+    public static rzeAktiviereApothekenZugangAnfrage ErstellerzeAktiviereApothekenZugangAnfrage(string rzkdnr,
+                                                                                               string apoIk,
+                                                                                               string apoInformation,
+                                                                                               string apoLogMethode,
+                                                                                               string softwarehersteller,
+                                                                                               string softwarename,
+                                                                                               string softwareversion,
+                                                                                               string aktivierungsCode,
+                                                                                               X509Certificate caCertificate,
+                                                                                               string aesSchluessel,
+                                                                                               int aesSchluesselstaerke,
+                                                                                               string aesIV)
+    {
+      rzeAktiviereApothekenZugangAnfrage anfrage = new rzeAktiviereApothekenZugangAnfrage();
+
+      return anfrage;
+    }
+
 
 
     /// <summary>

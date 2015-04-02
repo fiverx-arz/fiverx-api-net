@@ -12,13 +12,23 @@ namespace FiverxLinkSecurityTestClient
 
     private static void Demolauf()
     {
+      /*Zum Testen entsprechende Methoden einkommentieren bzw. auskommentieren!*/
+
+      //Zertifikaterstellung:
+
       //Demo.DemoServerZertifikat(true);
       //Demo.DemoClientZertifikat();
+
+      //Lokale Demoausführungen:
+
       //Demo.DemoRzeAnfrage();
       //Demo.DemoRzeAntwort();
-      //Demo.DemoServiceAnfrageVerarbeiteAuftrag();
-      //Demo.DemoServiceAnfrageLadeSicherheitsmerkmale();
+
+      //Serviceanfragen:
+
+      Demo.DemoServiceAnfrageVerarbeiteAuftrag();
       //Demo.DemoServiceAnfrageLadeRzSecurityVersion();
+      //Demo.DemoTestAnfrageNARZTestservice();
     }
 
 

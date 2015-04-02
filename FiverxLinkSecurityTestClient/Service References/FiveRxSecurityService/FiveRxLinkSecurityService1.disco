@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://ars-fiverx.de/FiveRxLinkSecurityService.asmx?wsdl" docRef="http://ars-fiverx.de/FiveRxLinkSecurityService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://ars-fiverx.de/FiveRxLinkSecurityService.asmx" xmlns:q1="http://fiverx.de/security" binding="q1:FiveRxLinkSecurityServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://ars-fiverx.de/FiveRxLinkSecurityService.asmx" xmlns:q2="http://fiverx.de/security" binding="q2:FiveRxLinkSecurityServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

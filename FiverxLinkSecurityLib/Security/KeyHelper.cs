@@ -388,7 +388,7 @@ namespace FiverxLinkSecurityLib.Security
             block = "";
           }
 
-          if (aktivierungsCode.Length < 25)
+          if (aktivierungsCode.Length < 25 && string.IsNullOrEmpty(block))
           {
             aktivierungsCode += "-";
           }
@@ -441,6 +441,22 @@ namespace FiverxLinkSecurityLib.Security
 
       return true;
     }
+
+    public static void CreateAESSchluesseldaten(string aesAlgorithmus, out string AesSchluessel, out string AesIv)
+    {
+      IBufferedCipher cipher = CipherUtilities.GetCipher(aesAlgorithmus);
+      cipher.GetBlockSize();
+      AesSchluessel = "";
+      AesIv = "";
+
+      /*
+    AesSchluesselLaenge = GetSchluesselStaerke(schluesselStaerke);
+    AesSchluessel = CreateAESKey(schluesselStaerke);
+    AesIv = 
+      */
+
+    }
+
 
     public static string CreateAESKey(KeyStrength schluesselStaerke)
     {

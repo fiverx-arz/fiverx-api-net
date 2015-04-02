@@ -14,16 +14,16 @@
       </applicationRequestMinimum>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!--
-          UAC Manifest Options
-          If you want to change the Windows User Account Control level replace the 
-          requestedExecutionLevel node with one of the following.
+          UAC-Manifestoptionen
+          Wenn Sie die Zugangsebene für das Windows-Benutzerkonto ändern möchten, ersetzen Sie den 
+          requestedExecutionLevel-Knoten durch eines der folgenden Elemente.
 
         <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-         If you want to utilize File and Registry Virtualization for backward 
-         compatibility then delete the requestedExecutionLevel node.
+         Löschen Sie den requestedExecutionLevel-Knoten, wenn Sie 
+         zum Gewährleisten der Abwärtskompatibilität die Datei- und Registrierungsvirtualisierung verwenden möchten.
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
@@ -54,36 +54,36 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FiverxLinkSecurityLib.dll" size="70656">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FiverxLinkSecurityLib.dll" size="61952">
       <assemblyIdentity name="FiverxLinkSecurityLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>8vDSvfz86ps3+OtdUTioqJdQQqI=</dsig:DigestValue>
+        <dsig:DigestValue>9jXWCJpABVIQiDYZ2npQEWZfBkQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FiverxLinkSecurityTestClient.exe" size="35240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FiverxLinkSecurityTestClient.exe" size="36352">
       <assemblyIdentity name="FiverxLinkSecurityTestClient" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>UhthLZpEyRKYr0HIXIhGI1J09qY=</dsig:DigestValue>
+        <dsig:DigestValue>t4i3kvYmv1tz3YExzFk5XNadXoA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="FiverxLinkSecurityTestClient.exe.config" size="1230">
+  <file name="FiverxLinkSecurityTestClient.exe.config" size="1509">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>u2StwLafc0oZ8hQGGgHPFPkELhU=</dsig:DigestValue>
+      <dsig:DigestValue>ujqI8VJJ+x7TzEZ7vC2rhMHXQAk=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

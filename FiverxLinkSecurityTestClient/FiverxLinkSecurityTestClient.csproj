@@ -88,6 +88,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\NARZService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ZertifikatService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,17 +102,18 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="FiverxLinkSecurityTestClient_TemporaryKey.pfx" />
-    <None Include="Service References\FiveRxSecurityService\FiveRxLinkSecurityService.wsdl" />
-    <None Include="Service References\FiveRxSecurityService\FiverxLinkSecurityTestClient.FiveRxSecurityService.ladeRzSecurityVersionResponse.datasource">
+    <None Include="Service References\FiveRxSecurityService\FiveRxLinkSecurityService1.wsdl" />
+    <None Include="Service References\FiveRxSecurityService\FiverxLinkSecurityTestClient.FiveRxSecurityService.genericResponseMsg.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\FiveRxSecurityService\FiverxLinkSecurityTestClient.FiveRxSecurityService.ladeRzSicherheitsmerkmaleResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Service References\NARZService\FiverxLinkSecurityImplService.wsdl" />
+    <None Include="Service References\NARZService\FiverxLinkSecurityService.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FiveRxSecurityService\FiverxLinkSecurityTestClient.FiveRxSecurityService.ladeRzZertifikatResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Service References\NARZService\FiverxLinkSecurityService1.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FiveRxSecurityService\FiverxLinkSecurityTestClient.FiveRxSecurityService.verarbeiteAuftragResponse.datasource">
+    <None Include="Service References\NARZService\FiverxLinkSecurityTestClient.NARZService.genericResponseMsg.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ZertifikatService\FiverxLinkSecurityTestClient.ZertifikatService.ClientCertificate.datasource">
@@ -161,22 +167,8 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\FiveRxSecurityService\" />
+    <WCFMetadataStorage Include="Service References\NARZService\" />
     <WCFMetadataStorage Include="Service References\ZertifikatService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FiveRxSecurityService\FiveRxLinkSecurityService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FiveRxSecurityService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FiveRxSecurityService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FiveRxSecurityService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ZertifikatService\configuration91.svcinfo" />
@@ -192,6 +184,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ZertifikatService\ZertifikatService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FiveRxSecurityService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FiveRxSecurityService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FiveRxSecurityService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FiveRxSecurityService\FiveRxLinkSecurityService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NARZService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NARZService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NARZService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -57,8 +57,8 @@
     <Compile Include="Kommunikation\V0200\ClientHelper.cs" />
     <Compile Include="Kommunikation\V0200\ServerHelper.cs" />
     <Compile Include="Kommunikation\V0200\SecurityServiceComHelper.cs" />
-    <Compile Include="Schema\V0200\FiveRxSecurityBox_SV0100_16.cs">
-      <DependentUpon>FiveRxSecurityBox_SV0100_16.xsd</DependentUpon>
+    <Compile Include="Schema\V0200\FiveRxSecurityBox_SV0100_20.cs">
+      <DependentUpon>FiveRxSecurityBox_SV0100_20.xsd</DependentUpon>
     </Compile>
     <Compile Include="Security\CertHelper.cs" />
     <Compile Include="Security\CryptoHelper.cs" />
@@ -83,16 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assemblies\BouncyCastle.Crypto.dll" />
-    <None Include="Service References\FiveRxSecurityService\FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\FiveRxSecurityService\FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\FiveRxSecurityService\FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\FiveRxSecurityService\FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragResponse.datasource">
+    <None Include="Service References\FiveRxSecurityService\FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\FiveRxSecurityService\Reference.svcmap">
@@ -101,14 +92,14 @@
     </None>
     <None Include="Service References\FiveRxSecurityService\configuration.svcinfo" />
     <None Include="Service References\FiveRxSecurityService\configuration91.svcinfo" />
-    <None Include="Service References\FiveRxSecurityService\FiveRxLinkSecurityService.disco" />
+    <None Include="Service References\FiveRxSecurityService\Fiverxlinksecurityservice.disco" />
+    <None Include="Schema\V0200\FiveRxSecurityBox_SV0100_20.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Schema\V0200\FiveRxSecurityBox_SV0100_16.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FiveRxSecurityService\FiveRxLinkSecurityService.wsdl" />
+    <None Include="Service References\FiveRxSecurityService\Fiverxlinksecurityservice.wsdl" />
     <None Include="WSDL\V0200\FiveRxSecurityBox_02_00_15.wsdl" />
   </ItemGroup>
   <ItemGroup>

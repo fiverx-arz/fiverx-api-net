@@ -13,8 +13,123 @@
 // Dieser Quellcode wurde automatisch generiert von xsd, Version=4.0.30319.17929.
 // 
 
+
 namespace FiverxLinkSecurityLib.Schema.V0200
 {
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://fiverx.de/security/V0100")]
+  [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://fiverx.de/security/V0100", IsNullable = false)]
+  public partial class apoAesSchluessel
+  {
+
+    private string aesSchluesselField;
+
+    private string aesIVField;
+
+    private string aesEncryptionAlgorithmusField;
+
+    /// <remarks/>
+    public string aesSchluessel
+    {
+      get
+      {
+        return this.aesSchluesselField;
+      }
+      set
+      {
+        this.aesSchluesselField = value;
+      }
+    }
+
+    /// <remarks/>
+    public string aesIV
+    {
+      get
+      {
+        return this.aesIVField;
+      }
+      set
+      {
+        this.aesIVField = value;
+      }
+    }
+
+    /// <remarks/>
+    public string aesEncryptionAlgorithmus
+    {
+      get
+      {
+        return this.aesEncryptionAlgorithmusField;
+      }
+      set
+      {
+        this.aesEncryptionAlgorithmusField = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://fiverx.de/security/SV0100")]
+  public partial class rzSicherheitsmerkmal
+  {
+
+    private string[] encryptionAlgorithmField;
+
+    private string[] signatureAlgorithmField;
+
+    private string[] hashfunctionField;
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("encryptionAlgorithm")]
+    public string[] encryptionAlgorithm
+    {
+      get
+      {
+        return this.encryptionAlgorithmField;
+      }
+      set
+      {
+        this.encryptionAlgorithmField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("signatureAlgorithm")]
+    public string[] signatureAlgorithm
+    {
+      get
+      {
+        return this.signatureAlgorithmField;
+      }
+      set
+      {
+        this.signatureAlgorithmField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("hashfunction")]
+    public string[] hashfunction
+    {
+      get
+      {
+        return this.hashfunctionField;
+      }
+      set
+      {
+        this.hashfunctionField = value;
+      }
+    }
+  }
 
   /// <remarks/>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.17929")]
@@ -128,130 +243,6 @@ namespace FiverxLinkSecurityLib.Schema.V0200
       set
       {
         this.apoInfoField = value;
-      }
-    }
-  }
-
-  /// <remarks/>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://fiverx.de/security/SV0100")]
-  public partial class rzHashFunction
-  {
-
-    private string nameField;
-
-    /// <remarks/>
-    public string name
-    {
-      get
-      {
-        return this.nameField;
-      }
-      set
-      {
-        this.nameField = value;
-      }
-    }
-  }
-
-  /// <remarks/>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://fiverx.de/security/SV0100")]
-  public partial class rzEncryptionAlgorithm
-  {
-
-    private string nameField;
-
-    private string[] modeField;
-
-    private string[] paddingField;
-
-    /// <remarks/>
-    public string name
-    {
-      get
-      {
-        return this.nameField;
-      }
-      set
-      {
-        this.nameField = value;
-      }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("mode")]
-    public string[] mode
-    {
-      get
-      {
-        return this.modeField;
-      }
-      set
-      {
-        this.modeField = value;
-      }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("padding")]
-    public string[] padding
-    {
-      get
-      {
-        return this.paddingField;
-      }
-      set
-      {
-        this.paddingField = value;
-      }
-    }
-  }
-
-  /// <remarks/>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://fiverx.de/security/SV0100")]
-  public partial class rzHandshake
-  {
-
-    private rzEncryptionAlgorithm[] rzEncryptionAlgorithmsField;
-
-    private rzHashFunction[] rzHashfunctionsField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("rzEncryptionAlgorithms")]
-    public rzEncryptionAlgorithm[] rzEncryptionAlgorithms
-    {
-      get
-      {
-        return this.rzEncryptionAlgorithmsField;
-      }
-      set
-      {
-        this.rzEncryptionAlgorithmsField = value;
-      }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("rzHashfunctions")]
-    public rzHashFunction[] rzHashfunctions
-    {
-      get
-      {
-        return this.rzHashfunctionsField;
-      }
-      set
-      {
-        this.rzHashfunctionsField = value;
       }
     }
   }
@@ -422,6 +413,8 @@ namespace FiverxLinkSecurityLib.Schema.V0200
 
     private byte[] apoAktivierungsCodeField;
 
+    private apoAesSchluessel apoAesSchluesselField;
+
     /// <remarks/>
     public apoInformation apoInformation
     {
@@ -446,6 +439,19 @@ namespace FiverxLinkSecurityLib.Schema.V0200
       set
       {
         this.apoAktivierungsCodeField = value;
+      }
+    }
+
+    /// <remarks/>
+    public apoAesSchluessel apoAesSchluessel
+    {
+      get
+      {
+        return this.apoAesSchluesselField;
+      }
+      set
+      {
+        this.apoAesSchluesselField = value;
       }
     }
   }
@@ -680,7 +686,7 @@ namespace FiverxLinkSecurityLib.Schema.V0200
 
     private string hinweisField;
 
-    private rzHandshake rzSicherheitsmerkmaleField;
+    private rzSicherheitsmerkmal rzSicherheitsmerkmaleField;
 
     /// <remarks/>
     public string hinweis
@@ -696,7 +702,7 @@ namespace FiverxLinkSecurityLib.Schema.V0200
     }
 
     /// <remarks/>
-    public rzHandshake rzSicherheitsmerkmale
+    public rzSicherheitsmerkmal rzSicherheitsmerkmale
     {
       get
       {

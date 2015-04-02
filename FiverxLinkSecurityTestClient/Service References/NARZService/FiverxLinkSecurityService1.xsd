@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://fiverx.de/security" targetNamespace="http://fiverx.de/security" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="FiverxLinkSecurityException" type="tns:FiverxLinkSecurityException" />
+  <xs:complexType name="FiverxLinkSecurityException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="suppressed" nillable="true" type="tns:throwable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="throwable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="stackTrace" nillable="true" type="tns:stackTraceElement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="stackTraceElement" final="extension restriction">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

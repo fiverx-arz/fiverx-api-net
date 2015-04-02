@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://fiverx.de/security" name="FiverxLinkSecurityImplService" targetNamespace="http://fiverx.de/security" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://62.159.158.141:80/FiverxProductiveTest/FiverxLinkSecurityService?xsd=1" namespace="http://fiverx.de/security/types" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://62.159.158.141:80/FiverxProductiveTest/FiverxLinkSecurityService?xsd=2" namespace="http://fiverx.de/security" />
+    </xsd:schema>
+  </types>
+  <message name="ladeRzSecurityVersion">
+    <part xmlns:ns1="http://fiverx.de/security/types" name="ladeRzSecurityVersionRequestMsg" element="ns1:ladeRzSecurityVersionRequestMsg" />
+  </message>
+  <message name="ladeRzSecurityVersionResponse">
+    <part xmlns:ns2="http://fiverx.de/security/types" name="ladeRzSecurityVersionResponseMsg" element="ns2:ladeRzSecurityVersionResponseMsg" />
+  </message>
+  <message name="FiverxLinkSecurityException">
+    <part name="fault" element="tns:FiverxLinkSecurityException" />
+  </message>
+  <message name="ladeRzZertifikat">
+    <part xmlns:ns3="http://fiverx.de/security/types" name="ladeRzZertifikatRequestMsg" element="ns3:ladeRzZertifikatRequestMsg" />
+  </message>
+  <message name="ladeRzZertifikatResponse">
+    <part xmlns:ns4="http://fiverx.de/security/types" name="ladeRzZertifikatResponseMsg" element="ns4:ladeRzZertifikatResponseMsg" />
+  </message>
+  <message name="ladeRzSicherheitsmerkmale">
+    <part xmlns:ns5="http://fiverx.de/security/types" name="ladeRzSicherheitsmerkmaleRequestMsg" element="ns5:ladeRzSicherheitsmerkmaleRequestMsg" />
+  </message>
+  <message name="ladeRzSicherheitsmerkmaleResponse">
+    <part xmlns:ns6="http://fiverx.de/security/types" name="ladeRzSicherheitsmerkmaleResponseMsg" element="ns6:ladeRzSicherheitsmerkmaleResponseMsg" />
+  </message>
+  <message name="aktiviereApothekenZugang">
+    <part xmlns:ns7="http://fiverx.de/security/types" name="aktiviereApothekenZugangRequestMsg" element="ns7:aktiviereApothekenZugangRequestMsg" />
+  </message>
+  <message name="aktiviereApothekenZugangResponse">
+    <part xmlns:ns8="http://fiverx.de/security/types" name="aktiviereApothekenZugangResponseMsg" element="ns8:aktiviereApothekenZugangResponseMsg" />
+  </message>
+  <message name="verlaengereApothekenZugang">
+    <part xmlns:ns9="http://fiverx.de/security/types" name="verlaengereApothekenZugangRequestMsg" element="ns9:verlaengereApothekenZugangRequestMsg" />
+  </message>
+  <message name="verlaengereApothekenZugangResponse">
+    <part xmlns:ns10="http://fiverx.de/security/types" name="verlaengereApothekenZugangResponseMsg" element="ns10:verlaengereApothekenZugangResponseMsg" />
+  </message>
+  <message name="verarbeiteAuftrag">
+    <part xmlns:ns11="http://fiverx.de/security/types" name="verarbeiteAuftragRequestMsg" element="ns11:verarbeiteAuftragRequestMsg" />
+  </message>
+  <message name="verarbeiteAuftragResponse">
+    <part xmlns:ns12="http://fiverx.de/security/types" name="verarbeiteAuftragResponseMsg" element="ns12:verarbeiteAuftragResponseMsg" />
+  </message>
+  <portType name="FiverxLinkSecurityService_PortType">
+    <operation name="ladeRzSecurityVersion">
+      <input message="tns:ladeRzSecurityVersion" />
+      <output message="tns:ladeRzSecurityVersionResponse" />
+      <fault name="FiverxLinkSecurityException" message="tns:FiverxLinkSecurityException" />
+    </operation>
+    <operation name="ladeRzZertifikat">
+      <input message="tns:ladeRzZertifikat" />
+      <output message="tns:ladeRzZertifikatResponse" />
+      <fault name="FiverxLinkSecurityException" message="tns:FiverxLinkSecurityException" />
+    </operation>
+    <operation name="ladeRzSicherheitsmerkmale">
+      <input message="tns:ladeRzSicherheitsmerkmale" />
+      <output message="tns:ladeRzSicherheitsmerkmaleResponse" />
+      <fault name="FiverxLinkSecurityException" message="tns:FiverxLinkSecurityException" />
+    </operation>
+    <operation name="aktiviereApothekenZugang">
+      <input message="tns:aktiviereApothekenZugang" />
+      <output message="tns:aktiviereApothekenZugangResponse" />
+      <fault name="FiverxLinkSecurityException" message="tns:FiverxLinkSecurityException" />
+    </operation>
+    <operation name="verlaengereApothekenZugang">
+      <input message="tns:verlaengereApothekenZugang" />
+      <output message="tns:verlaengereApothekenZugangResponse" />
+      <fault name="FiverxLinkSecurityException" message="tns:FiverxLinkSecurityException" />
+    </operation>
+    <operation name="verarbeiteAuftrag">
+      <input message="tns:verarbeiteAuftrag" />
+      <output message="tns:verarbeiteAuftragResponse" />
+      <fault name="FiverxLinkSecurityException" message="tns:FiverxLinkSecurityException" />
+    </operation>
+  </portType>
+  <binding name="FiverxLinkSecurityService_PortTypePortBinding" type="tns:FiverxLinkSecurityService_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ladeRzSecurityVersion">
+      <soap:operation soapAction="http://fiverx.de/security#rzeladeRzSecurityVersion" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FiverxLinkSecurityException">
+        <soap:fault use="literal" name="FiverxLinkSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="ladeRzZertifikat">
+      <soap:operation soapAction="http://fiverx.de/security#ladeRzZertifikat" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FiverxLinkSecurityException">
+        <soap:fault use="literal" name="FiverxLinkSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="ladeRzSicherheitsmerkmale">
+      <soap:operation soapAction="http://fiverx.de/security#ladeRzSicherheitsmerkmale" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FiverxLinkSecurityException">
+        <soap:fault use="literal" name="FiverxLinkSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="aktiviereApothekenZugang">
+      <soap:operation soapAction="http://fiverx.de/security#aktiviereApothekenZugang" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FiverxLinkSecurityException">
+        <soap:fault use="literal" name="FiverxLinkSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="verlaengereApothekenZugang">
+      <soap:operation soapAction="http://fiverx.de/security#verlaengereApothekenZugang" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FiverxLinkSecurityException">
+        <soap:fault use="literal" name="FiverxLinkSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="verarbeiteAuftrag">
+      <soap:operation soapAction="http://fiverx.de/security#verarbeiteAuftrag" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FiverxLinkSecurityException">
+        <soap:fault use="literal" name="FiverxLinkSecurityException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="FiverxLinkSecurityImplService">
+    <port name="FiverxLinkSecurityService_PortTypePort" binding="tns:FiverxLinkSecurityService_PortTypePortBinding">
+      <soap:address location="http://62.159.158.141:80/FiverxProductiveTest/FiverxLinkSecurityService" />
+    </port>
+  </service>
+</definitions>

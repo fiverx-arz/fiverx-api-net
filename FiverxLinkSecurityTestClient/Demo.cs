@@ -1,6 +1,5 @@
 ﻿
 using System;
-using System.IO;
 using System.Xml;
 using FiverxLinkSecurityLib.Global;
 using FiverxLinkSecurityLib.Kommunikation.V0200;
@@ -26,13 +25,10 @@ namespace FiverxLinkSecurityTestClient
     static string testXmlAnfrage = @"<Request><data>Dies ist eine Anfrage an den Server</data></Request>";
     static string testXmlAntwort = @"<Response><data>Dies ist eine Antwort an den Client</data></Response>";
 
-    //static string fiveRxServiceAdresse = @"http://ars-fiverx.de:80/FiveRxLinkSecurityService.asmx";
-    //static string fiveRxServiceAdresse = @"http://ars-fiverx.de:8555/FiveRxLinkSecurityService.asmx";
-    //static string fiveRxServiceAdresse = @"https://192.168.38.214:400/FiveRxLinkSecurityService.asmx";
-    static string fiveRxServiceAdresse = @"http://localhost:49439/FiveRxLinkSecurityService.asmx";
-    static string fiveRxServiceAdresseNARZ = @"http://62.159.158.141/FiverxProductiveTest/FiverxLinkSecurityService";
+    static string fiveRxServiceAdresse = @"http://ars-fiverx.de:80/FiveRxLinkSecurityService.asmx";
+    //static string fiveRxServiceAdresse = @"http://62.159.158.141/FiverxProductiveTest/FiverxLinkSecurityService";
 
-    static string pfadAnfrageladeRzVersion = @"C:\TempFiveRx\ladeRzDienste.txt";
+    static string pfadAnfrageladeRzVersion = @"C:\TempFiveRx\ladeRzDienste.xml";
 
 
     /// <summary>
@@ -156,6 +152,10 @@ namespace FiverxLinkSecurityTestClient
 
 
 
+
+
+
+
       //----------------------------------------------------------------------------------------------------------------------------
       //Auf Server Seite:
       //----------------------------------------------------------------------------------------------------------------------------
@@ -244,10 +244,10 @@ namespace FiverxLinkSecurityTestClient
       using (FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoapClient client =
                 SecurityServiceComHelper.GetFiveRxServiceSecurityClient(fiveRxServiceAdresse, clientkeyStore, clientPasswort))
       {
-        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatResponse responseladeZertifikat =
-            client.ladeRzZertifikat(new FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatRequest());
+        FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg responseladeZertifikat =
+            client.ladeRzZertifikat(new FiverxLinkSecurityLib.FiveRxSecurityService.einParameterRequestMsg());
 
-        serviceZertifikatAntwort = ParseHelper.GetObjectFromXML<rzeLadeRzZertifikatAntwort>(responseladeZertifikat.ladeRzZertifikatResponseMsg.rzeAusgabeDaten);
+        serviceZertifikatAntwort = ParseHelper.GetObjectFromXML<rzeLadeRzZertifikatAntwort>(responseladeZertifikat.rzeAusgabeDaten);
       }
 
       X509Certificate caCertifikate = CertHelper.ConvertByteArrayToX509Certificate(serviceZertifikatAntwort.rzZertifikat);
@@ -270,18 +270,14 @@ namespace FiverxLinkSecurityTestClient
                                                                  new SecurityKonfiguration(),
                                                                  caCertifikate);
 
-      //anfrage.rzDatenBox =  Standards.DefEncoding.GetBytes(ParseHelper.ReadTextFromFile(zertpfad + "\\test.txt"));
-
-      FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragResponse response;
+      FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg response;
 
       using (FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoapClient client =
                 SecurityServiceComHelper.GetFiveRxServiceSecurityClient(fiveRxServiceAdresse, clientkeyStore, clientPasswort))
       {
-        FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest request = new FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest();
-        request.verarbeiteAuftragRequestMsg = new FiverxLinkSecurityLib.FiveRxSecurityService.zweiParameterRequestMsg();
-        request.verarbeiteAuftragRequestMsg.rzeEingabeDaten = ParseHelper.GetStringFromXMLObject<rzeAnfrage>(anfrage);
-        request.verarbeiteAuftragRequestMsg.rzeLadeRzSecurityVersion = "Test";
-
+        FiverxLinkSecurityLib.FiveRxSecurityService.zweiParameterRequestMsg request = new FiverxLinkSecurityLib.FiveRxSecurityService.zweiParameterRequestMsg();
+        request.rzeEingabeDaten = ParseHelper.GetStringFromXMLObject<rzeAnfrage>(anfrage);
+        request.rzeLadeRzSecurityVersion = "Test";
         response = client.verarbeiteAuftrag(request);
 
         client.Close();
@@ -293,7 +289,7 @@ namespace FiverxLinkSecurityTestClient
       bool istSigniertesXmlValide;
       X509Certificate signatureCertificate;
 
-      rzeAntwort serverAntwort = ParseHelper.GetObjectFromXML<rzeAntwort>(response.verarbeiteAuftragResponseMsg.rzeAusgabeDaten);
+      rzeAntwort serverAntwort = ParseHelper.GetObjectFromXML<rzeAntwort>(response.rzeAusgabeDaten);
 
       string xmlAsString = ClientHelper.VerifiziereServerAntwort(serverAntwort.rzDatenBox,
                                                                  clientkeyStore,
@@ -302,34 +298,6 @@ namespace FiverxLinkSecurityTestClient
                                                                  out istSignaturValide,
                                                                  out istSigniertesXmlValide,
                                                                  out signatureCertificate);
-    }
-
-    public static void DemoServiceAnfrageLadeSicherheitsmerkmale()
-    {
-      //Laden des Client KeyStores:
-      Pkcs12Store clientkeyStore = CertHelper.LadePkcsStore(zertpfad + "\\" + clientCertDateiname + ".pfx", clientPasswort);
-
-      rzeLadeRzSicherheitsmerkmaleAnfrage anfrage = ClientHelper.ErstelleRzeLadeSicherheitsmerkmalAnfrage("9998",
-                                                                                                          "303706931",
-                                                                                                          "Testapotheke FiveRxSecurity",
-                                                                                                          "ladeRzVersion",
-                                                                                                          "Musterhersteller",
-                                                                                                          "Mustersoftware",
-                                                                                                          "Musterversion");
-
-      FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleResponse antwort = null;
-
-      using (FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoapClient client =
-                SecurityServiceComHelper.GetFiveRxServiceSecurityClient(fiveRxServiceAdresse, clientkeyStore, clientPasswort))
-      {
-        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleRequest request =
-          new FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleRequest();
-        request.ladeRzSicherheitsmerkmaleRequestMsg = new FiverxLinkSecurityLib.FiveRxSecurityService.zweiParameterRequestMsg();
-        request.ladeRzSicherheitsmerkmaleRequestMsg.rzeEingabeDaten = ParseHelper.GetStringFromXMLObject<rzeLadeRzSicherheitsmerkmaleAnfrage>(anfrage);
-        antwort = client.ladeRzSicherheitsmerkmale(request);
-      }
-
-      rzeLadeRzSicherheitsmerkmaleAntwort sicherheitsmerkmale = ParseHelper.GetObjectFromXML<rzeLadeRzSicherheitsmerkmaleAntwort>(antwort.ladeRzSicherheitsmerkmaleResponseMsg.rzeAusgabeDaten);
     }
 
     public static void DemoServiceAnfrageLadeRzSecurityVersion()
@@ -344,19 +312,86 @@ namespace FiverxLinkSecurityTestClient
                                                                                                   "Mustersoftware",
                                                                                                   "Musterversion");
 
-      FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionResponse antwort = null;
+      FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg antwort = null;
 
       using (FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoapClient client =
                 SecurityServiceComHelper.GetFiveRxServiceSecurityClient(fiveRxServiceAdresse, clientkeyStore, clientPasswort))
       {
-        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest request =
-          new FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest();
-        request.ladeRzSecurityVersionRequestMsg = new FiverxLinkSecurityLib.FiveRxSecurityService.einParameterRequestMsg();
-        request.ladeRzSecurityVersionRequestMsg.rzeEingabeDaten = ParseHelper.GetStringFromXMLObject<rzeLadeRzSecurityVersionAnfrage>(anfrage);
+        FiverxLinkSecurityLib.FiveRxSecurityService.einParameterRequestMsg request = new FiverxLinkSecurityLib.FiveRxSecurityService.einParameterRequestMsg();
+        request.rzeEingabeDaten = ParseHelper.GetStringFromXMLObject<rzeLadeRzSecurityVersionAnfrage>(anfrage);
+
         antwort = client.ladeRzSecurityVersion(request);
       }
 
-      rzeLadeRzSecurityVersionAntwort securityVersion = ParseHelper.GetObjectFromXML<rzeLadeRzSecurityVersionAntwort>(antwort.ladeRzSecurityVersionResponseMsg.rzeAusgabeDaten);
+      rzeLadeRzSecurityVersionAntwort securityVersion = ParseHelper.GetObjectFromXML<rzeLadeRzSecurityVersionAntwort>(antwort.rzeAusgabeDaten);
+    }
+
+    public static void DemoTestAnfrageNARZTestservice()
+    {
+      using (NARZService.FiverxLinkSecurityService_PortTypeClient client = new NARZService.FiverxLinkSecurityService_PortTypeClient())
+      {
+        NARZService.einParameterRequestMsg anfrageObjectLadeRzSecurityVersion = new NARZService.einParameterRequestMsg();
+
+        rzeLadeRzSecurityVersionAnfrage anfrageLadeRzSecurityVersion = ClientHelper.ErstelleRzeLadeRzSecurityVersionAnfrage("9998",
+                                                                                                  "303706931",
+                                                                                                  "Testapotheke FiveRxSecurity",
+                                                                                                  "ladeRzVersion",
+                                                                                                  "Musterhersteller",
+                                                                                                  "Mustersoftware",
+                                                                                                  "Musterversion");
+
+        anfrageObjectLadeRzSecurityVersion.rzeEingabeDaten = ParseHelper.GetStringFromXMLObject<rzeLadeRzSecurityVersionAnfrage>(anfrageLadeRzSecurityVersion);
+        NARZService.genericResponseMsg antwortSecurityVersion = client.ladeRzSecurityVersion(anfrageObjectLadeRzSecurityVersion);
+
+        NARZService.zweiParameterRequestMsg anfrageObjectVerarbeiteAuftrag = new NARZService.zweiParameterRequestMsg();
+
+        //Laden des Client KeyStores:
+        Pkcs12Store clientkeyStore = CertHelper.LadePkcsStore(zertpfad + "\\" + clientCertDateiname + ".pfx", clientPasswort);
+
+        //Laden des Server Zerfifikats (üblich vom Server geladen per Webservice):
+        X509Certificate caCertifikate = CertHelper.Ladex509Certificate(zertpfad + "\\" + rzCertDateiname + ".der");
+
+        //Laden des fachliches Dokuments
+        XmlDocument fachlichesDokumentClient = new XmlDocument();
+        fachlichesDokumentClient.PreserveWhitespace = true;
+        fachlichesDokumentClient.LoadXml(testXmlAnfrage);
+
+        //Generierung des Serviceanfrage:
+        rzeAnfrage anfrageVerarbeiteAuftrag = ClientHelper.ErstelleRzeAnfrageObjekt(fachlichesDokumentClient,
+                                                                                    "1111",
+                                                                                    "111111111",
+                                                                                    "testapo",
+                                                                                    "testmethode",
+                                                                                    "testhersteller",
+                                                                                    "testsoftware",
+                                                                                    "testversion",
+                                                                                     clientkeyStore,
+                                                                                     clientPasswort,
+                                                                                     new SecurityKonfiguration(),
+                                                                                     caCertifikate);
+
+
+        anfrageObjectVerarbeiteAuftrag.rzeEingabeDaten = ParseHelper.GetStringFromXMLObject<rzeAnfrage>(anfrageVerarbeiteAuftrag);
+        anfrageObjectVerarbeiteAuftrag.rzeLadeRzSecurityVersion = "Test";
+
+        NARZService.genericResponseMsg antwortVerarbeiteAuftrag = client.verarbeiteAuftrag(anfrageObjectVerarbeiteAuftrag);
+
+        bool istEntschluesselungErfolgreich;
+        bool istSignaturValide;
+        bool istSigniertesXmlValide;
+        X509Certificate signatureCertificate;
+
+        rzeAntwort serverAntwort = ParseHelper.GetObjectFromXML<rzeAntwort>(antwortVerarbeiteAuftrag.rzeAusgabeDaten);
+
+        string xmlAsString = ClientHelper.VerifiziereServerAntwort(serverAntwort.rzDatenBox,
+                                                                   clientkeyStore,
+                                                                   clientPasswort,
+                                                                   out istEntschluesselungErfolgreich,
+                                                                   out istSignaturValide,
+                                                                   out istSigniertesXmlValide,
+                                                                   out signatureCertificate);
+
+      }
     }
   }
 }

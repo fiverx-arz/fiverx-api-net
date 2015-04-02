@@ -96,7 +96,7 @@ namespace FiverxLinkSecurityLib.Security
         }
         catch
         {
-
+          
         }
       }
 
@@ -134,7 +134,7 @@ namespace FiverxLinkSecurityLib.Security
     /// <param name="keyStorePasswort">KeyStore Passwort</param>    
     /// <param name="xmlSignatureCertificate">Liefert das Zertifikat welches in der Signatur inkludiert ist</param>
     /// <returns>Ist Signatur ok und entspricht das mitgeteilte Zertifikat dem jenigen der das Zertikat gesendet hat</returns>
-    private static bool VerifyXmlSignatureAndSignatureCertificate(XmlDocument xmlDoc,
+    public static bool VerifyXmlSignatureAndSignatureCertificate(XmlDocument xmlDoc,
                                                                   Pkcs12Store keyStore,
                                                                   string keyStorePasswort,
                                                                   bool verifiziereZertifikatRootAbstammung,

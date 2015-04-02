@@ -13,56 +13,41 @@ namespace FiverxLinkSecurityLib.WSDL.V0200
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
   [System.ServiceModel.ServiceContractAttribute(Namespace = "http://fiverx.de/security", ConfigurationName = "FiverxLinkSecurityService_PortType")]
-  public interface FiverxLinkSecurityService_PortType
+  public interface IFiverxLinkSecurityService_PortType
   {
-
     // CODEGEN: Der Nachrichtenvertrag wird generiert, da der Vorgang ladeRzSecurityVersion weder in RPC noch in einem Dokument eingeschlossen ist.
     [System.ServiceModel.OperationContractAttribute(Action = "http://fiverx.de/security#rzeladeRzSecurityVersion", ReplyAction = "*")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     ladeRzSecurityVersionResponse ladeRzSecurityVersion(ladeRzSecurityVersionRequest request);
 
-    [System.ServiceModel.OperationContractAttribute(Action = "http://fiverx.de/security#rzeladeRzSecurityVersion", ReplyAction = "*")]
-    System.Threading.Tasks.Task<ladeRzSecurityVersionResponse> ladeRzSecurityVersionAsync(ladeRzSecurityVersionRequest request);
 
     // CODEGEN: Der Nachrichtenvertrag wird generiert, da der Vorgang ladeRzZertifikat weder in RPC noch in einem Dokument eingeschlossen ist.
     [System.ServiceModel.OperationContractAttribute(Action = "http://fiverx.de/security#ladeRzZertifikat", ReplyAction = "*")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     ladeRzZertifikatResponse ladeRzZertifikat(ladeRzZertifikatRequest request);
 
-    [System.ServiceModel.OperationContractAttribute(Action = "http://fiverx.de/security#ladeRzZertifikat", ReplyAction = "*")]
-    System.Threading.Tasks.Task<ladeRzZertifikatResponse> ladeRzZertifikatAsync(ladeRzZertifikatRequest request);
 
     // CODEGEN: Der Nachrichtenvertrag wird generiert, da der Vorgang ladeRzSicherheitsmerkmale weder in RPC noch in einem Dokument eingeschlossen ist.
     [System.ServiceModel.OperationContractAttribute(Action = "http://fiverx.de/security#ladeRzSicherheitsmerkmale", ReplyAction = "*")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     ladeRzSicherheitsmerkmaleResponse ladeRzSicherheitsmerkmale(ladeRzSicherheitsmerkmaleRequest request);
 
-    [System.ServiceModel.OperationContractAttribute(Action = "http://fiverx.de/security#ladeRzSicherheitsmerkmale", ReplyAction = "*")]
-    System.Threading.Tasks.Task<ladeRzSicherheitsmerkmaleResponse> ladeRzSicherheitsmerkmaleAsync(ladeRzSicherheitsmerkmaleRequest request);
 
     // CODEGEN: Der Nachrichtenvertrag wird generiert, da der Vorgang aktiviereApothekenZugang weder in RPC noch in einem Dokument eingeschlossen ist.
     [System.ServiceModel.OperationContractAttribute(Action = "http://fiverx.de/security#aktiviereApothekenZugang", ReplyAction = "*")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     aktiviereApothekenZugangResponse aktiviereApothekenZugang(aktiviereApothekenZugangRequest request);
 
-    [System.ServiceModel.OperationContractAttribute(Action = "http://fiverx.de/security#aktiviereApothekenZugang", ReplyAction = "*")]
-    System.Threading.Tasks.Task<aktiviereApothekenZugangResponse> aktiviereApothekenZugangAsync(aktiviereApothekenZugangRequest request);
 
     // CODEGEN: Der Nachrichtenvertrag wird generiert, da der Vorgang verlaengereApothekenZugang weder in RPC noch in einem Dokument eingeschlossen ist.
     [System.ServiceModel.OperationContractAttribute(Action = "http://fiverx.de/security#verlaengereApothekenZugang", ReplyAction = "*")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     verlaengereApothekenZugangResponse verlaengereApothekenZugang(verlaengereApothekenZugangRequest request);
 
-    [System.ServiceModel.OperationContractAttribute(Action = "http://fiverx.de/security#verlaengereApothekenZugang", ReplyAction = "*")]
-    System.Threading.Tasks.Task<verlaengereApothekenZugangResponse> verlaengereApothekenZugangAsync(verlaengereApothekenZugangRequest request);
-
     // CODEGEN: Der Nachrichtenvertrag wird generiert, da der Vorgang verarbeiteAuftrag weder in RPC noch in einem Dokument eingeschlossen ist.
     [System.ServiceModel.OperationContractAttribute(Action = "http://fiverx.de/security#verarbeiteAuftrag", ReplyAction = "*")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     verarbeiteAuftragResponse verarbeiteAuftrag(verarbeiteAuftragRequest request);
-
-    [System.ServiceModel.OperationContractAttribute(Action = "http://fiverx.de/security#verarbeiteAuftrag", ReplyAction = "*")]
-    System.Threading.Tasks.Task<verarbeiteAuftragResponse> verarbeiteAuftragAsync(verarbeiteAuftragRequest request);
   }
 
   /// <remarks/>
@@ -400,13 +385,13 @@ namespace FiverxLinkSecurityLib.WSDL.V0200
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-  public interface FiverxLinkSecurityService_PortTypeChannel : FiverxLinkSecurityService_PortType, System.ServiceModel.IClientChannel
+  public interface FiverxLinkSecurityService_PortTypeChannel : IFiverxLinkSecurityService_PortType, System.ServiceModel.IClientChannel
   {
   }
 
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-  public partial class FiverxLinkSecurityService_PortTypeClient : System.ServiceModel.ClientBase<FiverxLinkSecurityService_PortType>, FiverxLinkSecurityService_PortType
+  public partial class FiverxLinkSecurityService_PortTypeClient : System.ServiceModel.ClientBase<IFiverxLinkSecurityService_PortType>, IFiverxLinkSecurityService_PortType
   {
 
     public FiverxLinkSecurityService_PortTypeClient()
@@ -434,7 +419,7 @@ namespace FiverxLinkSecurityLib.WSDL.V0200
     }
 
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    ladeRzSecurityVersionResponse FiverxLinkSecurityService_PortType.ladeRzSecurityVersion(ladeRzSecurityVersionRequest request)
+    ladeRzSecurityVersionResponse IFiverxLinkSecurityService_PortType.ladeRzSecurityVersion(ladeRzSecurityVersionRequest request)
     {
       return base.Channel.ladeRzSecurityVersion(request);
     }
@@ -443,25 +428,12 @@ namespace FiverxLinkSecurityLib.WSDL.V0200
     {
       ladeRzSecurityVersionRequest inValue = new ladeRzSecurityVersionRequest();
       inValue.ladeRzSecurityVersionRequestMsg = ladeRzSecurityVersionRequestMsg;
-      ladeRzSecurityVersionResponse retVal = ((FiverxLinkSecurityService_PortType)(this)).ladeRzSecurityVersion(inValue);
+      ladeRzSecurityVersionResponse retVal = ((IFiverxLinkSecurityService_PortType)(this)).ladeRzSecurityVersion(inValue);
       return retVal.ladeRzSecurityVersionResponseMsg;
     }
 
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    System.Threading.Tasks.Task<ladeRzSecurityVersionResponse> FiverxLinkSecurityService_PortType.ladeRzSecurityVersionAsync(ladeRzSecurityVersionRequest request)
-    {
-      return base.Channel.ladeRzSecurityVersionAsync(request);
-    }
-
-    public System.Threading.Tasks.Task<ladeRzSecurityVersionResponse> ladeRzSecurityVersionAsync(einParameterRequestMsg ladeRzSecurityVersionRequestMsg)
-    {
-      ladeRzSecurityVersionRequest inValue = new ladeRzSecurityVersionRequest();
-      inValue.ladeRzSecurityVersionRequestMsg = ladeRzSecurityVersionRequestMsg;
-      return ((FiverxLinkSecurityService_PortType)(this)).ladeRzSecurityVersionAsync(inValue);
-    }
-
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    ladeRzZertifikatResponse FiverxLinkSecurityService_PortType.ladeRzZertifikat(ladeRzZertifikatRequest request)
+    ladeRzZertifikatResponse IFiverxLinkSecurityService_PortType.ladeRzZertifikat(ladeRzZertifikatRequest request)
     {
       return base.Channel.ladeRzZertifikat(request);
     }
@@ -470,25 +442,12 @@ namespace FiverxLinkSecurityLib.WSDL.V0200
     {
       ladeRzZertifikatRequest inValue = new ladeRzZertifikatRequest();
       inValue.ladeRzZertifikatRequestMsg = ladeRzZertifikatRequestMsg;
-      ladeRzZertifikatResponse retVal = ((FiverxLinkSecurityService_PortType)(this)).ladeRzZertifikat(inValue);
+      ladeRzZertifikatResponse retVal = ((IFiverxLinkSecurityService_PortType)(this)).ladeRzZertifikat(inValue);
       return retVal.ladeRzZertifikatResponseMsg;
     }
 
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    System.Threading.Tasks.Task<ladeRzZertifikatResponse> FiverxLinkSecurityService_PortType.ladeRzZertifikatAsync(ladeRzZertifikatRequest request)
-    {
-      return base.Channel.ladeRzZertifikatAsync(request);
-    }
-
-    public System.Threading.Tasks.Task<ladeRzZertifikatResponse> ladeRzZertifikatAsync(zweiParameterRequestMsg ladeRzZertifikatRequestMsg)
-    {
-      ladeRzZertifikatRequest inValue = new ladeRzZertifikatRequest();
-      inValue.ladeRzZertifikatRequestMsg = ladeRzZertifikatRequestMsg;
-      return ((FiverxLinkSecurityService_PortType)(this)).ladeRzZertifikatAsync(inValue);
-    }
-
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    ladeRzSicherheitsmerkmaleResponse FiverxLinkSecurityService_PortType.ladeRzSicherheitsmerkmale(ladeRzSicherheitsmerkmaleRequest request)
+    ladeRzSicherheitsmerkmaleResponse IFiverxLinkSecurityService_PortType.ladeRzSicherheitsmerkmale(ladeRzSicherheitsmerkmaleRequest request)
     {
       return base.Channel.ladeRzSicherheitsmerkmale(request);
     }
@@ -497,25 +456,12 @@ namespace FiverxLinkSecurityLib.WSDL.V0200
     {
       ladeRzSicherheitsmerkmaleRequest inValue = new ladeRzSicherheitsmerkmaleRequest();
       inValue.ladeRzSicherheitsmerkmaleRequestMsg = ladeRzSicherheitsmerkmaleRequestMsg;
-      ladeRzSicherheitsmerkmaleResponse retVal = ((FiverxLinkSecurityService_PortType)(this)).ladeRzSicherheitsmerkmale(inValue);
+      ladeRzSicherheitsmerkmaleResponse retVal = ((IFiverxLinkSecurityService_PortType)(this)).ladeRzSicherheitsmerkmale(inValue);
       return retVal.ladeRzSicherheitsmerkmaleResponseMsg;
     }
 
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    System.Threading.Tasks.Task<ladeRzSicherheitsmerkmaleResponse> FiverxLinkSecurityService_PortType.ladeRzSicherheitsmerkmaleAsync(ladeRzSicherheitsmerkmaleRequest request)
-    {
-      return base.Channel.ladeRzSicherheitsmerkmaleAsync(request);
-    }
-
-    public System.Threading.Tasks.Task<ladeRzSicherheitsmerkmaleResponse> ladeRzSicherheitsmerkmaleAsync(zweiParameterRequestMsg ladeRzSicherheitsmerkmaleRequestMsg)
-    {
-      ladeRzSicherheitsmerkmaleRequest inValue = new ladeRzSicherheitsmerkmaleRequest();
-      inValue.ladeRzSicherheitsmerkmaleRequestMsg = ladeRzSicherheitsmerkmaleRequestMsg;
-      return ((FiverxLinkSecurityService_PortType)(this)).ladeRzSicherheitsmerkmaleAsync(inValue);
-    }
-
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    aktiviereApothekenZugangResponse FiverxLinkSecurityService_PortType.aktiviereApothekenZugang(aktiviereApothekenZugangRequest request)
+    aktiviereApothekenZugangResponse IFiverxLinkSecurityService_PortType.aktiviereApothekenZugang(aktiviereApothekenZugangRequest request)
     {
       return base.Channel.aktiviereApothekenZugang(request);
     }
@@ -524,25 +470,12 @@ namespace FiverxLinkSecurityLib.WSDL.V0200
     {
       aktiviereApothekenZugangRequest inValue = new aktiviereApothekenZugangRequest();
       inValue.aktiviereApothekenZugangRequestMsg = aktiviereApothekenZugangRequestMsg;
-      aktiviereApothekenZugangResponse retVal = ((FiverxLinkSecurityService_PortType)(this)).aktiviereApothekenZugang(inValue);
+      aktiviereApothekenZugangResponse retVal = ((IFiverxLinkSecurityService_PortType)(this)).aktiviereApothekenZugang(inValue);
       return retVal.aktiviereApothekenZugangResponseMsg;
     }
 
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    System.Threading.Tasks.Task<aktiviereApothekenZugangResponse> FiverxLinkSecurityService_PortType.aktiviereApothekenZugangAsync(aktiviereApothekenZugangRequest request)
-    {
-      return base.Channel.aktiviereApothekenZugangAsync(request);
-    }
-
-    public System.Threading.Tasks.Task<aktiviereApothekenZugangResponse> aktiviereApothekenZugangAsync(zweiParameterRequestMsg aktiviereApothekenZugangRequestMsg)
-    {
-      aktiviereApothekenZugangRequest inValue = new aktiviereApothekenZugangRequest();
-      inValue.aktiviereApothekenZugangRequestMsg = aktiviereApothekenZugangRequestMsg;
-      return ((FiverxLinkSecurityService_PortType)(this)).aktiviereApothekenZugangAsync(inValue);
-    }
-
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    verlaengereApothekenZugangResponse FiverxLinkSecurityService_PortType.verlaengereApothekenZugang(verlaengereApothekenZugangRequest request)
+    verlaengereApothekenZugangResponse IFiverxLinkSecurityService_PortType.verlaengereApothekenZugang(verlaengereApothekenZugangRequest request)
     {
       return base.Channel.verlaengereApothekenZugang(request);
     }
@@ -551,25 +484,12 @@ namespace FiverxLinkSecurityLib.WSDL.V0200
     {
       verlaengereApothekenZugangRequest inValue = new verlaengereApothekenZugangRequest();
       inValue.verlaengereApothekenZugangRequestMsg = verlaengereApothekenZugangRequestMsg;
-      verlaengereApothekenZugangResponse retVal = ((FiverxLinkSecurityService_PortType)(this)).verlaengereApothekenZugang(inValue);
+      verlaengereApothekenZugangResponse retVal = ((IFiverxLinkSecurityService_PortType)(this)).verlaengereApothekenZugang(inValue);
       return retVal.verlaengereApothekenZugangResponseMsg;
     }
 
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    System.Threading.Tasks.Task<verlaengereApothekenZugangResponse> FiverxLinkSecurityService_PortType.verlaengereApothekenZugangAsync(verlaengereApothekenZugangRequest request)
-    {
-      return base.Channel.verlaengereApothekenZugangAsync(request);
-    }
-
-    public System.Threading.Tasks.Task<verlaengereApothekenZugangResponse> verlaengereApothekenZugangAsync(zweiParameterRequestMsg verlaengereApothekenZugangRequestMsg)
-    {
-      verlaengereApothekenZugangRequest inValue = new verlaengereApothekenZugangRequest();
-      inValue.verlaengereApothekenZugangRequestMsg = verlaengereApothekenZugangRequestMsg;
-      return ((FiverxLinkSecurityService_PortType)(this)).verlaengereApothekenZugangAsync(inValue);
-    }
-
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    verarbeiteAuftragResponse FiverxLinkSecurityService_PortType.verarbeiteAuftrag(verarbeiteAuftragRequest request)
+    verarbeiteAuftragResponse IFiverxLinkSecurityService_PortType.verarbeiteAuftrag(verarbeiteAuftragRequest request)
     {
       return base.Channel.verarbeiteAuftrag(request);
     }
@@ -578,21 +498,8 @@ namespace FiverxLinkSecurityLib.WSDL.V0200
     {
       verarbeiteAuftragRequest inValue = new verarbeiteAuftragRequest();
       inValue.verarbeiteAuftragRequestMsg = verarbeiteAuftragRequestMsg;
-      verarbeiteAuftragResponse retVal = ((FiverxLinkSecurityService_PortType)(this)).verarbeiteAuftrag(inValue);
+      verarbeiteAuftragResponse retVal = ((IFiverxLinkSecurityService_PortType)(this)).verarbeiteAuftrag(inValue);
       return retVal.verarbeiteAuftragResponseMsg;
-    }
-
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    System.Threading.Tasks.Task<verarbeiteAuftragResponse> FiverxLinkSecurityService_PortType.verarbeiteAuftragAsync(verarbeiteAuftragRequest request)
-    {
-      return base.Channel.verarbeiteAuftragAsync(request);
-    }
-
-    public System.Threading.Tasks.Task<verarbeiteAuftragResponse> verarbeiteAuftragAsync(zweiParameterRequestMsg verarbeiteAuftragRequestMsg)
-    {
-      verarbeiteAuftragRequest inValue = new verarbeiteAuftragRequest();
-      inValue.verarbeiteAuftragRequestMsg = verarbeiteAuftragRequestMsg;
-      return ((FiverxLinkSecurityService_PortType)(this)).verarbeiteAuftragAsync(inValue);
     }
   }
 }

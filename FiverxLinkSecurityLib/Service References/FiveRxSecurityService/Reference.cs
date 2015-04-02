@@ -12,28 +12,23 @@ namespace FiverxLinkSecurityLib.FiveRxSecurityService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://fiverx.de/security/SV0100", ConfigurationName="FiveRxSecurityService.FiveRxLinkSecurityServiceSoap")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://fiverx.de/security", ConfigurationName="FiveRxSecurityService.FiveRxLinkSecurityServiceSoap")]
     public interface FiveRxLinkSecurityServiceSoap {
         
         // CODEGEN: Der Nachrichtenvertrag wird generiert, da der Vorgang ladeRzSecurityVersion weder in RPC noch in einem Dokument eingeschlossen ist.
-        [System.ServiceModel.OperationContractAttribute(Action="ladeRzSecurityVersionRequest", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://fiverx.de/security#rzeladeRzSecurityVersion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionResponse1 ladeRzSecurityVersion(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest1 request);
+        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionResponse ladeRzSecurityVersion(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest request);
         
         // CODEGEN: Der Nachrichtenvertrag wird generiert, da der Vorgang ladeRzZertifikat weder in RPC noch in einem Dokument eingeschlossen ist.
-        [System.ServiceModel.OperationContractAttribute(Action="ladeRzZertifikatRequest", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://fiverx.de/security#ladeRzZertifikat", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatResponse1 ladeRzZertifikat(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatRequest1 request);
-        
-        // CODEGEN: Der Nachrichtenvertrag wird generiert, da der Vorgang ladeRzSicherheitsmerkmale weder in RPC noch in einem Dokument eingeschlossen ist.
-        [System.ServiceModel.OperationContractAttribute(Action="ladeRzSicherheitsmerkmaleRequest", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleResponse1 ladeRzSicherheitsmerkmale(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleRequest1 request);
+        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatResponse ladeRzZertifikat(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatRequest request);
         
         // CODEGEN: Der Nachrichtenvertrag wird generiert, da der Vorgang verarbeiteAuftrag weder in RPC noch in einem Dokument eingeschlossen ist.
-        [System.ServiceModel.OperationContractAttribute(Action="verarbeiteAuftragRequest", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://fiverx.de/security#verarbeiteAuftrag", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragResponse1 verarbeiteAuftrag(FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest1 request);
+        FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragResponse verarbeiteAuftrag(FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest request);
     }
     
     /// <remarks/>
@@ -41,39 +36,7 @@ namespace FiverxLinkSecurityLib.FiveRxSecurityService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security/SV0100")]
-    public partial class ladeRzSecurityVersionRequest : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private einParameterRequestMsg ladeRzSecurityVersionRequestMsgField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public einParameterRequestMsg ladeRzSecurityVersionRequestMsg {
-            get {
-                return this.ladeRzSecurityVersionRequestMsgField;
-            }
-            set {
-                this.ladeRzSecurityVersionRequestMsgField = value;
-                this.RaisePropertyChanged("ladeRzSecurityVersionRequestMsg");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security/types")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security")]
     public partial class einParameterRequestMsg : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string rzeEingabeDatenField;
@@ -105,103 +68,7 @@ namespace FiverxLinkSecurityLib.FiveRxSecurityService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security/SV0100/types")]
-    public partial class verarbeiteAuftragResponse : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private genericResponseMsg verarbeiteAuftragResponseMsgField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public genericResponseMsg verarbeiteAuftragResponseMsg {
-            get {
-                return this.verarbeiteAuftragResponseMsgField;
-            }
-            set {
-                this.verarbeiteAuftragResponseMsgField = value;
-                this.RaisePropertyChanged("verarbeiteAuftragResponseMsg");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security/types")]
-    public partial class genericResponseMsg : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string rzeAusgabeDatenField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string rzeAusgabeDaten {
-            get {
-                return this.rzeAusgabeDatenField;
-            }
-            set {
-                this.rzeAusgabeDatenField = value;
-                this.RaisePropertyChanged("rzeAusgabeDaten");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security/SV0100")]
-    public partial class verarbeiteAuftragRequest : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private zweiParameterRequestMsg verarbeiteAuftragRequestMsgField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public zweiParameterRequestMsg verarbeiteAuftragRequestMsg {
-            get {
-                return this.verarbeiteAuftragRequestMsgField;
-            }
-            set {
-                this.verarbeiteAuftragRequestMsgField = value;
-                this.RaisePropertyChanged("verarbeiteAuftragRequestMsg");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security/types")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security")]
     public partial class zweiParameterRequestMsg : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string rzeEingabeDatenField;
@@ -247,148 +114,20 @@ namespace FiverxLinkSecurityLib.FiveRxSecurityService {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security/SV0100/types")]
-    public partial class ladeRzSicherheitsmerkmaleResponse : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security")]
+    public partial class genericResponseMsg : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private genericResponseMsg ladeRzSicherheitsmerkmaleResponseMsgField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public genericResponseMsg ladeRzSicherheitsmerkmaleResponseMsg {
-            get {
-                return this.ladeRzSicherheitsmerkmaleResponseMsgField;
-            }
-            set {
-                this.ladeRzSicherheitsmerkmaleResponseMsgField = value;
-                this.RaisePropertyChanged("ladeRzSicherheitsmerkmaleResponseMsg");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security/SV0100")]
-    public partial class ladeRzSicherheitsmerkmaleRequest : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private zweiParameterRequestMsg ladeRzSicherheitsmerkmaleRequestMsgField;
+        private string rzeAusgabeDatenField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public zweiParameterRequestMsg ladeRzSicherheitsmerkmaleRequestMsg {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string rzeAusgabeDaten {
             get {
-                return this.ladeRzSicherheitsmerkmaleRequestMsgField;
+                return this.rzeAusgabeDatenField;
             }
             set {
-                this.ladeRzSicherheitsmerkmaleRequestMsgField = value;
-                this.RaisePropertyChanged("ladeRzSicherheitsmerkmaleRequestMsg");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security/SV0100/types")]
-    public partial class ladeRzZertifikatResponse : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private genericResponseMsg ladeRzZertifikatResponseMsgField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public genericResponseMsg ladeRzZertifikatResponseMsg {
-            get {
-                return this.ladeRzZertifikatResponseMsgField;
-            }
-            set {
-                this.ladeRzZertifikatResponseMsgField = value;
-                this.RaisePropertyChanged("ladeRzZertifikatResponseMsg");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security/SV0100")]
-    public partial class ladeRzZertifikatRequest : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private zweiParameterRequestMsg ladeRzZertifikatRequestMsgField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public zweiParameterRequestMsg ladeRzZertifikatRequestMsg {
-            get {
-                return this.ladeRzZertifikatRequestMsgField;
-            }
-            set {
-                this.ladeRzZertifikatRequestMsgField = value;
-                this.RaisePropertyChanged("ladeRzZertifikatRequestMsg");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fiverx.de/security/SV0100/types")]
-    public partial class ladeRzSecurityVersionResponse : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private genericResponseMsg ladeRzSecurityVersionResponseMsgField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public genericResponseMsg ladeRzSecurityVersionResponseMsg {
-            get {
-                return this.ladeRzSecurityVersionResponseMsgField;
-            }
-            set {
-                this.ladeRzSecurityVersionResponseMsgField = value;
-                this.RaisePropertyChanged("ladeRzSecurityVersionResponseMsg");
+                this.rzeAusgabeDatenField = value;
+                this.RaisePropertyChanged("rzeAusgabeDaten");
             }
         }
         
@@ -406,33 +145,16 @@ namespace FiverxLinkSecurityLib.FiveRxSecurityService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ladeRzSecurityVersionRequest1 {
+    public partial class ladeRzSecurityVersionRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security/SV0100", Order=0)]
-        public FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest requestSecurityVersion;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ladeRzSecurityVersionRequest", Namespace="http://fiverx.de/security", Order=0)]
+        public FiverxLinkSecurityLib.FiveRxSecurityService.einParameterRequestMsg ladeRzSecurityVersionRequest1;
         
-        public ladeRzSecurityVersionRequest1() {
+        public ladeRzSecurityVersionRequest() {
         }
         
-        public ladeRzSecurityVersionRequest1(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest requestSecurityVersion) {
-            this.requestSecurityVersion = requestSecurityVersion;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ladeRzSecurityVersionResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security/SV0100/types", Order=0)]
-        public FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionResponse ladeRzSecurityVersionResponse;
-        
-        public ladeRzSecurityVersionResponse1() {
-        }
-        
-        public ladeRzSecurityVersionResponse1(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionResponse ladeRzSecurityVersionResponse) {
-            this.ladeRzSecurityVersionResponse = ladeRzSecurityVersionResponse;
+        public ladeRzSecurityVersionRequest(FiverxLinkSecurityLib.FiveRxSecurityService.einParameterRequestMsg ladeRzSecurityVersionRequest1) {
+            this.ladeRzSecurityVersionRequest1 = ladeRzSecurityVersionRequest1;
         }
     }
     
@@ -440,15 +162,32 @@ namespace FiverxLinkSecurityLib.FiveRxSecurityService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ladeRzZertifikatRequest1 {
+    public partial class ladeRzSecurityVersionResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security/SV0100", Order=0)]
-        public FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatRequest requestladeRzZertifikat;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security/types", Order=0)]
+        public FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg genericResponseMsg;
         
-        public ladeRzZertifikatRequest1() {
+        public ladeRzSecurityVersionResponse() {
         }
         
-        public ladeRzZertifikatRequest1(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatRequest requestladeRzZertifikat) {
+        public ladeRzSecurityVersionResponse(FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg genericResponseMsg) {
+            this.genericResponseMsg = genericResponseMsg;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ladeRzZertifikatRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security", Order=0)]
+        public FiverxLinkSecurityLib.FiveRxSecurityService.einParameterRequestMsg requestladeRzZertifikat;
+        
+        public ladeRzZertifikatRequest() {
+        }
+        
+        public ladeRzZertifikatRequest(FiverxLinkSecurityLib.FiveRxSecurityService.einParameterRequestMsg requestladeRzZertifikat) {
             this.requestladeRzZertifikat = requestladeRzZertifikat;
         }
     }
@@ -457,33 +196,16 @@ namespace FiverxLinkSecurityLib.FiveRxSecurityService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ladeRzZertifikatResponse1 {
+    public partial class ladeRzZertifikatResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security/SV0100/types", Order=0)]
-        public FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatResponse ladeRzZertifikatResponse;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security/types", Order=0)]
+        public FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg genericResponseMsg;
         
-        public ladeRzZertifikatResponse1() {
+        public ladeRzZertifikatResponse() {
         }
         
-        public ladeRzZertifikatResponse1(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatResponse ladeRzZertifikatResponse) {
-            this.ladeRzZertifikatResponse = ladeRzZertifikatResponse;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ladeRzSicherheitsmerkmaleRequest1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security/SV0100", Order=0)]
-        public FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleRequest requestladeRzSicherheitsmerkmal;
-        
-        public ladeRzSicherheitsmerkmaleRequest1() {
-        }
-        
-        public ladeRzSicherheitsmerkmaleRequest1(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleRequest requestladeRzSicherheitsmerkmal) {
-            this.requestladeRzSicherheitsmerkmal = requestladeRzSicherheitsmerkmal;
+        public ladeRzZertifikatResponse(FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg genericResponseMsg) {
+            this.genericResponseMsg = genericResponseMsg;
         }
     }
     
@@ -491,32 +213,15 @@ namespace FiverxLinkSecurityLib.FiveRxSecurityService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ladeRzSicherheitsmerkmaleResponse1 {
+    public partial class verarbeiteAuftragRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security/SV0100/types", Order=0)]
-        public FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleResponse ladeRzSicherheitsmerkmaleResponse;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security", Order=0)]
+        public FiverxLinkSecurityLib.FiveRxSecurityService.zweiParameterRequestMsg requestAuftrag;
         
-        public ladeRzSicherheitsmerkmaleResponse1() {
+        public verarbeiteAuftragRequest() {
         }
         
-        public ladeRzSicherheitsmerkmaleResponse1(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleResponse ladeRzSicherheitsmerkmaleResponse) {
-            this.ladeRzSicherheitsmerkmaleResponse = ladeRzSicherheitsmerkmaleResponse;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class verarbeiteAuftragRequest1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security/SV0100", Order=0)]
-        public FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest requestAuftrag;
-        
-        public verarbeiteAuftragRequest1() {
-        }
-        
-        public verarbeiteAuftragRequest1(FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest requestAuftrag) {
+        public verarbeiteAuftragRequest(FiverxLinkSecurityLib.FiveRxSecurityService.zweiParameterRequestMsg requestAuftrag) {
             this.requestAuftrag = requestAuftrag;
         }
     }
@@ -525,16 +230,16 @@ namespace FiverxLinkSecurityLib.FiveRxSecurityService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class verarbeiteAuftragResponse1 {
+    public partial class verarbeiteAuftragResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security/SV0100/types", Order=0)]
-        public FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragResponse verarbeiteAuftragResponse;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://fiverx.de/security/types", Order=0)]
+        public FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg genericResponseMsg;
         
-        public verarbeiteAuftragResponse1() {
+        public verarbeiteAuftragResponse() {
         }
         
-        public verarbeiteAuftragResponse1(FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragResponse verarbeiteAuftragResponse) {
-            this.verarbeiteAuftragResponse = verarbeiteAuftragResponse;
+        public verarbeiteAuftragResponse(FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg genericResponseMsg) {
+            this.genericResponseMsg = genericResponseMsg;
         }
     }
     
@@ -566,51 +271,39 @@ namespace FiverxLinkSecurityLib.FiveRxSecurityService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionResponse1 FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap.ladeRzSecurityVersion(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest1 request) {
+        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionResponse FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap.ladeRzSecurityVersion(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest request) {
             return base.Channel.ladeRzSecurityVersion(request);
         }
         
-        public FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionResponse ladeRzSecurityVersion(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest requestSecurityVersion) {
-            FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest1 inValue = new FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest1();
-            inValue.requestSecurityVersion = requestSecurityVersion;
-            FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionResponse1 retVal = ((FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap)(this)).ladeRzSecurityVersion(inValue);
-            return retVal.ladeRzSecurityVersionResponse;
+        public FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg ladeRzSecurityVersion(FiverxLinkSecurityLib.FiveRxSecurityService.einParameterRequestMsg ladeRzSecurityVersionRequest1) {
+            FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest inValue = new FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionRequest();
+            inValue.ladeRzSecurityVersionRequest1 = ladeRzSecurityVersionRequest1;
+            FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSecurityVersionResponse retVal = ((FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap)(this)).ladeRzSecurityVersion(inValue);
+            return retVal.genericResponseMsg;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatResponse1 FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap.ladeRzZertifikat(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatRequest1 request) {
+        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatResponse FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap.ladeRzZertifikat(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatRequest request) {
             return base.Channel.ladeRzZertifikat(request);
         }
         
-        public FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatResponse ladeRzZertifikat(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatRequest requestladeRzZertifikat) {
-            FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatRequest1 inValue = new FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatRequest1();
+        public FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg ladeRzZertifikat(FiverxLinkSecurityLib.FiveRxSecurityService.einParameterRequestMsg requestladeRzZertifikat) {
+            FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatRequest inValue = new FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatRequest();
             inValue.requestladeRzZertifikat = requestladeRzZertifikat;
-            FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatResponse1 retVal = ((FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap)(this)).ladeRzZertifikat(inValue);
-            return retVal.ladeRzZertifikatResponse;
+            FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzZertifikatResponse retVal = ((FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap)(this)).ladeRzZertifikat(inValue);
+            return retVal.genericResponseMsg;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleResponse1 FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap.ladeRzSicherheitsmerkmale(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleRequest1 request) {
-            return base.Channel.ladeRzSicherheitsmerkmale(request);
-        }
-        
-        public FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleResponse ladeRzSicherheitsmerkmale(FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleRequest requestladeRzSicherheitsmerkmal) {
-            FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleRequest1 inValue = new FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleRequest1();
-            inValue.requestladeRzSicherheitsmerkmal = requestladeRzSicherheitsmerkmal;
-            FiverxLinkSecurityLib.FiveRxSecurityService.ladeRzSicherheitsmerkmaleResponse1 retVal = ((FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap)(this)).ladeRzSicherheitsmerkmale(inValue);
-            return retVal.ladeRzSicherheitsmerkmaleResponse;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragResponse1 FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap.verarbeiteAuftrag(FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest1 request) {
+        FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragResponse FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap.verarbeiteAuftrag(FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest request) {
             return base.Channel.verarbeiteAuftrag(request);
         }
         
-        public FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragResponse verarbeiteAuftrag(FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest requestAuftrag) {
-            FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest1 inValue = new FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest1();
+        public FiverxLinkSecurityLib.FiveRxSecurityService.genericResponseMsg verarbeiteAuftrag(FiverxLinkSecurityLib.FiveRxSecurityService.zweiParameterRequestMsg requestAuftrag) {
+            FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest inValue = new FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragRequest();
             inValue.requestAuftrag = requestAuftrag;
-            FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragResponse1 retVal = ((FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap)(this)).verarbeiteAuftrag(inValue);
-            return retVal.verarbeiteAuftragResponse;
+            FiverxLinkSecurityLib.FiveRxSecurityService.verarbeiteAuftragResponse retVal = ((FiverxLinkSecurityLib.FiveRxSecurityService.FiveRxLinkSecurityServiceSoap)(this)).verarbeiteAuftrag(inValue);
+            return retVal.genericResponseMsg;
         }
     }
 }

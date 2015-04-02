@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="33ca8cd6-cf9d-4bf7-a51c-bf514e234934" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8243cfeb-82f9-4c87-9445-e4b7929f3027" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:49439/FiveRxLinkSecurityService.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://ars-fiverx.de:80/FiveRxLinkSecurityService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="FiveRxLinkSecurityService.wsdl" MetadataType="Wsdl" ID="9d3ff61a-2655-4fff-a029-8f251bc6a021" SourceId="1" SourceUrl="http://localhost:49439/FiveRxLinkSecurityService.asmx?wsdl" />
-    <MetadataFile FileName="FiveRxLinkSecurityService.disco" MetadataType="Disco" ID="1c1a653e-5f82-4f7b-ab8e-fd5bb03176d1" SourceId="1" SourceUrl="http://localhost:49439/FiveRxLinkSecurityService.asmx?disco" />
+    <MetadataFile FileName="FiveRxLinkSecurityService1.wsdl" MetadataType="Wsdl" ID="11e841f8-dfc0-40bd-9df5-34d4296e957e" SourceId="1" SourceUrl="http://ars-fiverx.de/FiveRxLinkSecurityService.asmx?wsdl" />
+    <MetadataFile FileName="FiveRxLinkSecurityService1.disco" MetadataType="Disco" ID="36ab1d71-2698-4a5b-96c6-f7ff2d7094e7" SourceId="1" SourceUrl="http://ars-fiverx.de/FiveRxLinkSecurityService.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -6,7 +6,7 @@ namespace FiverxLinkSecurityLib.Global
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://fiverx.de/security/types")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://fiverx.de/security")]
   public partial class einParameterRequestMsg
   {
 
@@ -32,7 +32,7 @@ namespace FiverxLinkSecurityLib.Global
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://fiverx.de/security/types")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://fiverx.de/security")]
   public partial class zweiParameterRequestMsg
   {
 
@@ -74,7 +74,7 @@ namespace FiverxLinkSecurityLib.Global
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://fiverx.de/security/types")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://fiverx.de/security")]
   public partial class genericResponseMsg
   {
 
@@ -94,7 +94,7 @@ namespace FiverxLinkSecurityLib.Global
       }
     }
   }
-
+  /*
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
   [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -102,7 +102,7 @@ namespace FiverxLinkSecurityLib.Global
   public partial class ladeRzSecurityVersionRequest
   {
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security/types", Order = 0)]
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security", Order = 0)]
     public einParameterRequestMsg ladeRzSecurityVersionRequestMsg;
 
     public ladeRzSecurityVersionRequest()
@@ -122,7 +122,7 @@ namespace FiverxLinkSecurityLib.Global
   public partial class ladeRzSecurityVersionResponse
   {
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security/types", Order = 0)]
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security", Order = 0)]
     public genericResponseMsg ladeRzSecurityVersionResponseMsg;
 
     public ladeRzSecurityVersionResponse()
@@ -142,7 +142,7 @@ namespace FiverxLinkSecurityLib.Global
   public partial class ladeRzZertifikatRequest
   {
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security/types", Order = 0)]
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security", Order = 0)]
     public zweiParameterRequestMsg ladeRzZertifikatRequestMsg;
 
     public ladeRzZertifikatRequest()
@@ -162,7 +162,7 @@ namespace FiverxLinkSecurityLib.Global
   public partial class ladeRzZertifikatResponse
   {
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security/types", Order = 0)]
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security", Order = 0)]
     public genericResponseMsg ladeRzZertifikatResponseMsg;
 
     public ladeRzZertifikatResponse()
@@ -182,7 +182,7 @@ namespace FiverxLinkSecurityLib.Global
   public partial class ladeRzSicherheitsmerkmaleRequest
   {
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security/types", Order = 0)]
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security", Order = 0)]
     public zweiParameterRequestMsg ladeRzSicherheitsmerkmaleRequestMsg;
 
     public ladeRzSicherheitsmerkmaleRequest()
@@ -202,7 +202,7 @@ namespace FiverxLinkSecurityLib.Global
   public partial class ladeRzSicherheitsmerkmaleResponse
   {
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security/types", Order = 0)]
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security", Order = 0)]
     public genericResponseMsg ladeRzSicherheitsmerkmaleResponseMsg;
 
     public ladeRzSicherheitsmerkmaleResponse()
@@ -222,7 +222,7 @@ namespace FiverxLinkSecurityLib.Global
   public partial class aktiviereApothekenZugangRequest
   {
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security/types", Order = 0)]
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security", Order = 0)]
     public zweiParameterRequestMsg aktiviereApothekenZugangRequestMsg;
 
     public aktiviereApothekenZugangRequest()
@@ -242,7 +242,7 @@ namespace FiverxLinkSecurityLib.Global
   public partial class aktiviereApothekenZugangResponse
   {
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security/types", Order = 0)]
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security", Order = 0)]
     public genericResponseMsg aktiviereApothekenZugangResponseMsg;
 
     public aktiviereApothekenZugangResponse()
@@ -262,7 +262,7 @@ namespace FiverxLinkSecurityLib.Global
   public partial class verlaengereApothekenZugangRequest
   {
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security/types", Order = 0)]
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security", Order = 0)]
     public zweiParameterRequestMsg verlaengereApothekenZugangRequestMsg;
 
     public verlaengereApothekenZugangRequest()
@@ -282,7 +282,7 @@ namespace FiverxLinkSecurityLib.Global
   public partial class verlaengereApothekenZugangResponse
   {
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security/types", Order = 0)]
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security", Order = 0)]
     public genericResponseMsg verlaengereApothekenZugangResponseMsg;
 
     public verlaengereApothekenZugangResponse()
@@ -302,7 +302,7 @@ namespace FiverxLinkSecurityLib.Global
   public partial class verarbeiteAuftragRequest
   {
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security/types", Order = 0)]
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security", Order = 0)]
     public zweiParameterRequestMsg verarbeiteAuftragRequestMsg;
 
     public verarbeiteAuftragRequest()
@@ -322,7 +322,7 @@ namespace FiverxLinkSecurityLib.Global
   public partial class verarbeiteAuftragResponse
   {
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security/types", Order = 0)]
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://fiverx.de/security", Order = 0)]
     public genericResponseMsg verarbeiteAuftragResponseMsg;
 
     public verarbeiteAuftragResponse()
@@ -333,5 +333,5 @@ namespace FiverxLinkSecurityLib.Global
     {
       this.verarbeiteAuftragResponseMsg = verarbeiteAuftragResponseMsg;
     }
-  }
+  }*/
 }

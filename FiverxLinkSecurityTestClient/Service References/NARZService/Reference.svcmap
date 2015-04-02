@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1dd4537e-eaaf-4d2c-8b48-d5064c30801c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://62.159.158.141/FiverxProductiveTest/FiverxLinkSecurityService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FiverxLinkSecurityService.xsd" MetadataType="Schema" ID="2681f22c-f8da-45d4-98b8-2d8c62f7ccd3" SourceId="1" SourceUrl="http://62.159.158.141/FiverxProductiveTest/FiverxLinkSecurityService?xsd=1" />
+    <MetadataFile FileName="FiverxLinkSecurityImplService.wsdl" MetadataType="Wsdl" ID="7865488c-7919-4a2e-8fc4-bd54e634a9a6" SourceId="1" SourceUrl="http://62.159.158.141/FiverxProductiveTest/FiverxLinkSecurityService?wsdl" />
+    <MetadataFile FileName="FiverxLinkSecurityService1.xsd" MetadataType="Schema" ID="e8d9050e-6bc1-4638-8ad5-366e7676e2c8" SourceId="1" SourceUrl="http://62.159.158.141/FiverxProductiveTest/FiverxLinkSecurityService?xsd=2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

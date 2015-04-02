@@ -19,11 +19,23 @@ namespace FiverxLinkSecurityLib.Global
       xmlString = Standards.DefEncoding.GetString(memoryStream.ToArray());
       memoryStream.Close();
       memoryStream.Dispose();
+
+      if (xmlString.Substring(0, 250).ToUpper().Contains("ENCODING"))
+      {
+        int posDeclaration = xmlString.IndexOf(">");
+        xmlString = xmlString.Substring(posDeclaration + 1, xmlString.Length - (posDeclaration + 1));
+      }
       return xmlString;
     }
 
     public static T GetObjectFromXML<T>(string soapContent)
     {
+      if (soapContent.Substring(0, 250).ToUpper().Contains("ENCODING"))
+      {
+        int posDeclaration = soapContent.IndexOf(">");
+        soapContent = soapContent.Substring(posDeclaration + 1, soapContent.Length - (posDeclaration + 1));
+      }
+
       MemoryStream stream = new MemoryStream();
       StreamWriter w = new StreamWriter(stream, Standards.DefEncoding);
       w.BaseStream.Seek(0, SeekOrigin.End);

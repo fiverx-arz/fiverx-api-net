@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://fiverx.de/security/types" targetNamespace="http://fiverx.de/security/types" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="aktiviereApothekenZugangRequestMsg" type="tns:zweiParameterRequestMsg" />
+  <xs:element name="aktiviereApothekenZugangResponseMsg" type="tns:genericResponseMsg" />
+  <xs:element name="einParameterRequestMsg" type="tns:einParameterRequestMsg" />
+  <xs:element name="genericResponseMsg" type="tns:genericResponseMsg" />
+  <xs:element name="ladeRzSecurityVersionRequestMsg" type="tns:einParameterRequestMsg" />
+  <xs:element name="ladeRzSecurityVersionResponseMsg" type="tns:genericResponseMsg" />
+  <xs:element name="ladeRzSicherheitsmerkmaleRequestMsg" type="tns:zweiParameterRequestMsg" />
+  <xs:element name="ladeRzSicherheitsmerkmaleResponseMsg" type="tns:genericResponseMsg" />
+  <xs:element name="ladeRzZertifikatRequestMsg" type="tns:zweiParameterRequestMsg" />
+  <xs:element name="ladeRzZertifikatResponseMsg" type="tns:genericResponseMsg" />
+  <xs:element name="verarbeiteAuftragRequestMsg" type="tns:zweiParameterRequestMsg" />
+  <xs:element name="verarbeiteAuftragResponseMsg" type="tns:genericResponseMsg" />
+  <xs:element name="verlaengereApothekenZugangRequestMsg" type="tns:zweiParameterRequestMsg" />
+  <xs:element name="verlaengereApothekenZugangResponseMsg" type="tns:genericResponseMsg" />
+  <xs:element name="zweiParameterRequestMsg" type="tns:zweiParameterRequestMsg" />
+  <xs:complexType name="einParameterRequestMsg">
+    <xs:sequence>
+      <xs:element name="rzeEingabeDaten" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="zweiParameterRequestMsg">
+    <xs:sequence>
+      <xs:element name="rzeEingabeDaten" type="xs:string" />
+      <xs:element name="rzeLadeRzSecurityVersion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="genericResponseMsg">
+    <xs:sequence>
+      <xs:element name="rzeAusgabeDaten" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
